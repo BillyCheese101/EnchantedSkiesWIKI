@@ -22,7 +22,7 @@
     background-image: url('/css/searchicon.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
+    width: 500px; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
@@ -113,6 +113,79 @@
     transition: max-height 0.2s ease-out;
   color: black;
 }
+          .blue {
+            color: blue;
+          }
+          
+          /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
 		</style>
 	</head>
 	<body>
@@ -133,9 +206,17 @@
 
           <ul id="myUL">
             <li>
-              <button class="accordion">Crafting</button>
+              <button class="accordion">Elements</button>
               <div class="panel">
-                <p>Hello Kiddos</p>
+                <h1>Elements actually do stuff!</h1>
+                <h4>There are four elements <span style="color:red;">Ignistran (Fire)</span>, <span style="color:aqua;">Aquarius (Water)</span>, <span style="color:green;">Terravus (Earth)</span>and <span style="color:grey;">Caelius (Air)</span>.</h4>
+                <p>Elements now have a purpose, not only do they have cool names and colours they are incorporated in the new custom crafting and pets systems.</p>
+                <p>Each element gets 3 unique pets.</p>
+                <p><span style="color:red;">Fire</span>: Pigman, Blaze and Magmacube</p>
+                <p><span style="color:aqua;">Water</span>: Silverfish, squid and guardian</p>
+                <p><span style="color:green;">Earth</span>: Cow, slime and creeper</p>
+                <p><span style="color:grey;">Air</span>: Chicken, bat and enderman</p>
+                  <button id="elementalCraftingBTN">Open Modal</button>
               </div>
             </li>
             
@@ -143,11 +224,11 @@
               <button class="accordion">Spawners</button>
               <div class="panel">
 		      <h1>The spawners are tiered as to how difficult it is for their grinder to be made</h1>
-                <p>Tier 1(FREE) - Snow Golem(2k), Cave spider(3k), Zombie(1k)
-                <p>Tier 2(40K) - Sheep(10k), Silverfish(15k), Blaze(8k)</p>
-                <p>Tier 3(300k) - Cow(40k), Slime(40k), Endermite(55k)</p>
-                <p>Tier 4(800k) -Creeper(100k), Mooshroom(170k), Guardian(200k)</p>
-                <p>Tier 5(2.5mill) - Squid(300k), Iron Golem(500k) , Ghast(800k)</p>
+                <p>Tier 1<span style="color: limegreen">(FREE)</span> - Snow Golem(2k), Cave spider(3k), Zombie(1k)
+                <p>Tier 2<span style="color: limegreen">(40K)</span> - Sheep(10k), Silverfish(15k), Blaze(8k)</p>
+                <p>Tier 3<span style="color: limegreen">(300k)</span> - Cow(40k), Slime(40k), Endermite(55k)</p>
+                <p>Tier 4<span style="color: limegreen">(800k)</span> -Creeper(100k), Mooshroom(170k), Guardian(200k)</p>
+                <p>Tier 5<span style="color: limegreen">(2.5mill)</span> - Squid(300k), Iron Golem(500k) , Ghast(800k)</p>
               </div>
 
             </li>
@@ -157,7 +238,75 @@
               <div class="panel">
                 <h1>Cobble generators have been made very different this map....</h1>
                 <p>Cobble generators are now progressive. This means that as your island progresses you will <i>unlock</i> new ores.</p>
-                <p>Starting with</p>
+                <p>Tiers:</p>
+                <p class="blue">Default:</p>
+                       <p>Cobblestone: 70%
+                       Stone: 20%
+                        Coal Ore: 10%</p>
+                <p class="blue">Island Level 50:</p>
+                     <p> Cobblestone: 60%
+                       Stone: 25%
+                       Coal Ore: 15%
+                       Iron Ore: 6%</p>
+                <p class="blue">Island Level 100:</p>
+                      <p>Cobblestone: 49%
+                       Stone: 29%
+                       Coal Ore: 15%
+                       Iron Ore: 8%</p>
+                <p class="blue">Island Level 200:</p>
+                      <p>Cobblestone: 40%
+                       Stone: 34%
+                       Coal Ore: 17%
+                       Iron Ore: 9%</p>
+                <p class="blue">Island Level 1000:</p>
+                       <p>Cobblestone: 30%
+                       Stone: 35%
+                       Coal Ore: 20%
+                       Iron Ore: 10%
+                       Redstone Ore: 2%
+                       Lapis Ore: 3%</p>
+                <p class="blue">Island Level 1500:</p>
+                       <p>Cobblestone: 30%
+                       Stone: 30%
+                       Coal Ore: 20%
+                       Iron Ore: 10%
+                       Redstone Ore: 5%
+                       Lapis Ore: 5%</p>
+                <p class="blue">Island Level 2000:</p>
+                       <p>Cobblestone: 30%
+                       Stone: 30%
+                       Coal Ore: 17%
+                       Iron Ore: 10%
+                       Redstone Ore: 5%
+                       Lapis Ore: 5%
+                       Gold Ore: 3%</p>
+                <p class="blue">Island Level 5000:</p>
+                       <p>Cobblestone: 25%
+                       Stone: 30%
+                       Coal Ore: 15%
+                       Iron Ore: 10%
+                       Redstone Ore: 7%
+                       Lapis Ore: 7%
+                       Emerald Ore: 1%
+                       Gold Ore: 5%</p>
+                <p class="blue">Island Level 8000:</p>
+                       <p>Cobblestone: 25%
+                       Stone: 20%
+                       Coal Ore: 13%
+                       Iron Ore: 14%
+                       Redstone Ore: 9%
+                       Lapis Ore: 9%
+                       Emerald Ore: 3%
+                       Gold Ore: 7%</p>
+                <p class="blue">Island Level 10000:</p>
+                       <p>Cobblestone: 20%
+                       Stone: 20%
+                       Coal Ore: 11%
+                       Iron Ore: 15%
+                       Redstone Ore: 10%
+                       Lapis Ore: 10%
+                       Emerald Ore: 5%
+                       Gold Ore: 9%</p>
               </div>
             </li>
             
@@ -166,6 +315,25 @@
       
       </div>
       
+      <!-- The Modal -->
+<div id="elementalCrafting" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Elemental Crafting</h2>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="modal-footer">
+      <h3><br></h3>
+    </div>
+  </div>
+
+</div>
       
       
       
@@ -176,7 +344,33 @@
       
       
       
-      
+<script>
+// Get the modal
+var modal = document.getElementById('elementalCrafting');
+
+// Get the button that opens the modal
+var btn = document.getElementById("elementalCraftingBTN");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>     
       
       
       
