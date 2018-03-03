@@ -29,14 +29,12 @@
     border: 1px solid #ddd; /* Add a grey border */
     margin-bottom: 12px; /* Add some space below the input */
 }
-
 #myUL {
     /* Remove default list styling */
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-
 #myUL li a {
     border: 1px solid #ddd; /* Add a border to all links */
     margin-top: -1px; /* Prevent double borders */
@@ -47,7 +45,6 @@
     color: black; /* Add a black text color */
     display: block; /* Make it into a block element to fill the whole list */
 }
-
 #myUL li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
@@ -101,11 +98,9 @@
     font-size: 15px;
     transition: 0.4s;
 }
-
 .active, .accordion:hover {
     background-color: #ccc;
 }
-
 .panel {
     padding: 0 18px;
     background-color: white;
@@ -132,7 +127,6 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
 /* Modal Content */
 .modal-content {
     position: relative;
@@ -147,18 +141,15 @@
     animation-name: animatetop;
     animation-duration: 0.4s
 }
-
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
 }
-
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
-
 /* The Close Button */
 .close {
     color: white;
@@ -166,22 +157,18 @@
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
 .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
-
 .modal-body {padding: 2px 16px;}
-
 .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
@@ -335,6 +322,46 @@
                 <p>Every hour a magical event called a <i>Raid</i> is triggered. This event involves caskets of varying rarity, <span style="color:lime">Common</span> <span style="color:gold">Ancient</span> <span style="color:	rgb(153,50,204)">Divine</span>, drop around /warp pvp offering great riches of armour, money and more. Players can fight to the death to win the awesome loot, but beware you may lose everything.</p>
               </div>
             </li>
+            
+                                    <li>
+              <button class="accordion">Pets</button>
+              <div class="panel">
+                <h1>Your new best friend!</h1>
+                <p>There are 4 types of pets:</p>
+                <p>Basic: Pig, Rabbit, Wolf, Cat</p>
+                <p>Advanced: Spider, Skeleton, Zombie</p>
+                <p>Specialist: Villager, Iron Golem, Witch, Endermite. (These pets have special powers that will help you dominate :) )</p>
+                <p>Seasonal/Exclusive: Seasonal pets eg: <span style="color:orange">Halloween</span> and <span style="color:red">Christmas</span>. Exclusive pets can be bought from the store.</p>
+                
+                <h4>Commands:</h4>
+                <p><b style="color: blue">/pcst</b> Choose a skill tree. If you choose riding you have to get a lead or pet rider to ride it.</p>
+                <p><b style="color: blue">/pc</b> Call your pet to you</p>
+                <p><b style="color: blue">/psw</b> Change your pet</p>
+                <p><b style="color: blue">/petname (name)</b> Give your pet a snazzy new name (<span style="color:gold">CheesyPuffs</span>)</p>
+                <p><b style="color: blue">/petstore</b> Store ya pet</p>
+                <p><b style="color: blue">/pb</b> To change its mode (aggressive, passive, dueling ect.)</p>
+                <p><b style="color: blue">/petinfo</b> To see your pets info</p>
+                <p><b style="color: blue">/petskill</b> To see your pets statsss.</p>
+              </div>
+            </li>
+            
+            <li>
+              <button class="accordion">Koth</button>
+              <div class="panel">
+                <h1>King(ofSlimes) of the hill!</h1>
+                <h4>The awesome pvp battle for dominance of a lil thingy built by Sreeves_</h4>
+                <p>Koth is an event which happens every day at 7pm GMT (thats 2pm EST for you other kids). You have to cap the area for 5 minutes, if you are pushed out or killed someone else can cap. If you win you get different loot each time. The location for where it is is at /warp pvp at certain areas. </p>
+                <h5>Schedule:</h5>
+                <p>Monday: Water</p>
+                  <p>Tuesday: Lava</p>
+                  <p>Wednesday: Air</p>
+                  <p>Thursday: Earth</p>
+                  <p>Friday: Water</p>
+                  <p>Saturday: Lava</p>
+                  <p>Sunday: Air</p>
+              </div>
+            </li>
+            
           </ul>
         </div>
       
@@ -374,23 +401,18 @@
 <script>
 // Get the modal
 var modal = document.getElementById('elementalCrafting');
-
 // Get the button that opens the modal
 var btn = document.getElementById("elementalCraftingBTN");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     modal.style.display = "block";
 }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -410,7 +432,6 @@ function orderList() {
     filter = input.value.toUpperCase();
     ul = document.getElementById("myUL");
     li = ul.getElementsByTagName('li');
-
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("button")[0];
@@ -425,7 +446,6 @@ function orderList() {
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
-
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
